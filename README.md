@@ -26,6 +26,6 @@ npm run build      # static export to ./out
 app/             Next.js App Router routes and layouts
 components/      Reusable UI components
 public/          Static assets (CNAME, .nojekyll, images)
-design.md        Design intent and visual direction
+DESIGN.md        Design intent and visual direction
 CLAUDE.md        Engineering guidance for AI coding agents
 ```
