@@ -11,8 +11,8 @@ const sans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Kangin",
-  description: "Data and ML engineering — projects, writing, work.",
+  title: "Kang",
+  description: "Data engineering — projects, writing, work.",
 };
 
 // Runs before paint to resolve theme (stored override → system preference) and set data-theme on <html>.
