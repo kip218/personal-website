@@ -7,13 +7,23 @@
   --foreground: #0a0a0a;
   --muted: #6b6b6b;
   --accent: #c2410c;
+  --surface-hover: rgba(0, 0, 0, 0.05);
 }
 
+:root[data-theme="dark"] {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --muted: #8a8a8a;
+  --surface-hover: rgba(255, 255, 255, 0.06);
+}
+
+/* No-JS / pre-paint fallback: honour system preference if data-theme isn't set yet. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme]) {
     --background: #0a0a0a;
     --foreground: #ededed;
     --muted: #8a8a8a;
+    --surface-hover: rgba(255, 255, 255, 0.06);
   }
 }
 
@@ -27,6 +37,47 @@ body {
   font-feature-settings: "ss01", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* Theme toggle: crossfade sun/moon driven by data-theme on <html>. */
+.theme-toggle__sun,
+.theme-toggle__moon {
+  position: absolute;
+  inset: 0;
+  transform-origin: 50% 50%;
+  transition:
+    opacity 350ms cubic-bezier(0.32, 0.72, 0, 1),
+    transform 450ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+:root[data-theme="dark"] .theme-toggle__sun {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+:root[data-theme="dark"] .theme-toggle__moon {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}
+:root[data-theme="light"] .theme-toggle__sun,
+:root:not([data-theme]) .theme-toggle__sun {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.5);
+}
+:root[data-theme="light"] .theme-toggle__moon,
+:root:not([data-theme]) .theme-toggle__moon {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .theme-toggle__sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+  }
+  :root:not([data-theme]) .theme-toggle__moon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

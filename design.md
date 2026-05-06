@@ -4,7 +4,7 @@ A working document for the rebuild of my personal website. This captures intent,
 
 ## Goals
 
-- Serve as a living portfolio for **Data/ML job hunting** and ongoing personal branding.
+- Serve as a living portfolio for **Data Engineering** and ongoing personal branding.
 - Showcase **who I am** — career, projects, and how I think — primarily through technical work.
 - Feel **polished and modern enough to wow** a hiring manager or fellow engineer in the first 5 seconds.
 - Be **content-defensible long term** — a place I can keep adding writeups and projects to over years, not a one-shot redesign.
