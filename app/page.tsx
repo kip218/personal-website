@@ -1,27 +1,27 @@
 export default function Home() {
   return (
-    <main className="space-y-16">
-      <section className="space-y-4">
-        <h1 className="text-2xl font-medium tracking-tight">Kangin</h1>
+    <main className="space-y-24">
+      <section>
+        <h1 className="text-base font-medium tracking-tight">Kang In Park</h1>
+        <p className="text-base text-[color:var(--muted)]">Data Engineer</p>
+      </section>
+
+      <section className="space-y-6">
+        <h2 className="text-base font-medium tracking-tight">Today</h2>
         <p className="text-base leading-relaxed text-[color:var(--muted)]">
-          {/* TODO: real bio. Two or three sentences, first-person, specific. */}
-          Placeholder bio. Working on data and ML; this site is where I keep my
-          projects and writing.
+          {/* TODO: fill in */}
+          Placeholder.
         </p>
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-sm font-medium uppercase tracking-wider text-[color:var(--muted)]">
-          Projects
-        </h2>
-        <p className="text-sm text-[color:var(--muted)]">Coming soon.</p>
+        <h2 className="text-base font-medium tracking-tight">Projects</h2>
+        <p className="text-base text-[color:var(--muted)]">Coming soon.</p>
       </section>
 
       <section className="space-y-6">
-        <h2 className="text-sm font-medium uppercase tracking-wider text-[color:var(--muted)]">
-          Writing
-        </h2>
-        <p className="text-sm text-[color:var(--muted)]">Coming soon.</p>
+        <h2 className="text-base font-medium tracking-tight">Writing</h2>
+        <p className="text-base text-[color:var(--muted)]">Coming soon.</p>
       </section>
     </main>
   );

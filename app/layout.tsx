@@ -9,8 +9,8 @@ const sans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Kangin",
-  description: "Data and ML engineering — projects, writing, work.",
+  title: "Kang In — Data Engineer",
+  description: "Data engineering — projects, writing, work.",
 };
 
 export default function RootLayout({
