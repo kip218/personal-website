@@ -11,6 +11,7 @@ const sans = Geist({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kangin.me"),
   title: "Kang",
   description: "Kang In Park - data engineer",
 };
