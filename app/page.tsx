@@ -1,8 +1,15 @@
-export default function Home() {
+import Link from "next/link";
+import { listThoughts } from "@/lib/thoughts";
+
+export default async function Home() {
+  const thoughts = await listThoughts();
+
   return (
-    <main className="space-y-16">
+    <main className="space-y-24">
       <section>
-        <h1 className="text-base font-medium tracking-tight">Kang In Park</h1>
+        <h1 className="text-base font-medium tracking-tight">
+          <Link href="/">Kang In Park</Link>
+        </h1>
         <p className="text-base text-[color:var(--muted)]">Data Engineer</p>
       </section>
 
@@ -38,6 +45,35 @@ export default function Home() {
           <li>I don't like sacrificing quality for speed.</li>
           <li>But I also don't like nitpicking on things that don't really matter.</li>
         </ul>
+      </section>
+
+      <section className="space-y-4">
+        <h2 className="text-base font-medium tracking-tight">Thoughts</h2>
+        {thoughts.length === 0 ? (
+          <p className="text-base text-[color:var(--muted)]">
+            Nothing here yet. Soon.
+          </p>
+        ) : (
+          <ul className="-mx-3 list-none space-y-1 pl-0">
+            {thoughts.map((t) => (
+              <li key={t.slug}>
+                <Link
+                  href={`/thoughts/${t.slug}/`}
+                  className="block rounded-lg px-3 py-3 transition-colors duration-150 hover:bg-[color:var(--surface-hover)]"
+                >
+                  <span className="block text-base text-[color:var(--foreground)]">
+                    {t.title}
+                  </span>
+                  {t.description ? (
+                    <span className="mt-1 block text-base text-[color:var(--muted)]">
+                      {t.description}
+                    </span>
+                  ) : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );

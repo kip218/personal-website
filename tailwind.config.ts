@@ -5,6 +5,7 @@ export default {
     "./app/**/*.{ts,tsx,md,mdx}",
     "./components/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
+    "./mdx-components.tsx",
   ],
   future: {
     hoverOnlyWhenSupported: true,

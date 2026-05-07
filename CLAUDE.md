@@ -62,6 +62,25 @@ featured: true
 
 Match the site's voice: first-person, specific, direct. Don't invent results, numbers, or technical claims.
 
+### Thoughts
+
+Short-form posts live in `content/thoughts/<slug>.mdx`. The slug is the filename (kebab-case, no date prefix) and is also the URL at `/thoughts/<slug>`.
+
+```yaml
+---
+title: "Post title"
+description: "Optional one-line summary"
+date: "YYYY-MM-DD"
+---
+```
+
+Conventions specific to thoughts:
+
+- **`date` is internal only.** It exists in frontmatter so the listing can sort newest-first, but it is never rendered in the UI. Don't add a date byline to the post page or the home listing. If you find yourself surfacing the date, stop — that's a deliberate design choice.
+- No `tags` or `featured`. Keep frontmatter to `title` (required), `description` (optional), and `date` (required, for ordering only).
+- Slug should be kebab-case and readable (`why-i-stopped-x`, not `2026-05-07-thought`) — the date lives in frontmatter, not the filename.
+- One thought per file. To publish, commit the new `.mdx` to `main` — GitHub Actions handles the deploy.
+
 ## Commits
 
 - Conventional Commits when natural (`feat:`, `fix:`, `chore:`)
