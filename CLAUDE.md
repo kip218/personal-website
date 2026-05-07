@@ -71,15 +71,17 @@ Short-form posts live in `content/thoughts/<slug>.mdx`. The slug is the filename
 title: "Post title"
 description: "Optional one-line summary"
 date: "YYYY-MM-DD"
+draft: true
 ---
 ```
 
 Conventions specific to thoughts:
 
 - **`date` is internal only.** It exists in frontmatter so the listing can sort newest-first, but it is never rendered in the UI. Don't add a date byline to the post page or the home listing. If you find yourself surfacing the date, stop — that's a deliberate design choice.
-- No `tags` or `featured`. Keep frontmatter to `title` (required), `description` (optional), and `date` (required, for ordering only).
+- No `tags` or `featured`. Keep frontmatter to `title` (required), `description` (optional), `date` (required, for ordering only), and `draft` (optional).
+- **`draft: true` hides the post from the built site** — it stays in git (so Obsidian-on-mobile editing keeps working) but is excluded from the home listing and `generateStaticParams`, so the slug 404s. Omit the field (or set it to `false`) to publish. Run `NEXT_PUBLIC_INCLUDE_DRAFTS=1 npm run dev` to preview drafts locally.
 - Slug should be kebab-case and readable (`why-i-stopped-x`, not `2026-05-07-thought`) — the date lives in frontmatter, not the filename.
-- One thought per file. To publish, commit the new `.mdx` to `main` — GitHub Actions handles the deploy.
+- One thought per file. To publish, commit the new `.mdx` to `main` (without `draft: true`) — GitHub Actions handles the deploy.
 
 ## Commits
 
