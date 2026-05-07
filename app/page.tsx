@@ -21,7 +21,7 @@ export default function Home() {
           <li>I like trying new tech and optimizing my setup.</li>
           <li>I like learning from others and sharing my knowledge.</li>
           <li>
-            I like simple solutions that work over{" "}
+            I like simple solutions that work over the {" "}
             <a
               href="https://grugbrain.dev/#grug-on-complexity"
               target="_blank"

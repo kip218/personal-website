@@ -6,6 +6,9 @@ export default {
     "./components/**/*.{ts,tsx}",
     "./content/**/*.{md,mdx}",
   ],
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   theme: {
     extend: {
       fontFamily: {
