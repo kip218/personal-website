@@ -12,7 +12,7 @@ const sans = Geist({
 
 export const metadata: Metadata = {
   title: "Kang",
-  description: "Data engineering — projects, writing, work.",
+  description: "Kang In Park - data engineer",
 };
 
 // Runs before paint to resolve theme (stored override → system preference) and set data-theme on <html>.

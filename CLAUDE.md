@@ -55,7 +55,7 @@ Long-form content uses MDX. Frontmatter convention:
 title: "Project name"
 description: "One-sentence summary"
 date: "YYYY-MM-DD"
-tags: ["ml", "data"]
+tags: ["data", "tools"]
 featured: true
 ---
 ```
