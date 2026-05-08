@@ -29,6 +29,8 @@ export async function generateMetadata({
 async function loadPost(slug: string) {
   // Guard against path traversal — slug must be a simple filename component.
   if (!/^[a-z0-9][a-z0-9-_]*$/i.test(slug)) return null;
+  // Skip drafts — `getThought` already filters them out.
+  if (!(await getThought(slug))) return null;
   const file = path.join(process.cwd(), "content", "thoughts", `${slug}.mdx`);
   try {
     await fs.access(file);
