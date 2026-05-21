@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/thoughts/hello_2.mdx",
+                "file": "content/thoughts/AI.mdx",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "hello_2"
+              "title": "AI"
             }
           }
         ],
@@ -127,7 +127,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "content/thoughts/hello_2.mdx",
+            "file": "content/thoughts/AI.mdx",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -185,20 +185,20 @@
   },
   "active": "4f2f3ac4f5f82353",
   "lastOpenFiles": [
+    "content/thoughts/first_thought.mdx",
+    "content/thoughts/AI.mdx",
+    "/content/thoughts/first_thought.mdx",
+    "/content/thoughts",
+    "/content",
     "content/thoughts/hello.mdx",
-    "content/thoughts/hello_2.mdx",
     "/lib/thoughts.ts",
     "/lib",
     "/app/thoughts/[slug]/page.tsx",
     "/app/thoughts/[slug]",
     "/app/thoughts",
-    "/app",
     "/CLAUDE.md",
     "content/thoughts/Untitled.md",
     "CLAUDE.md",
-    "tsconfig.json",
-    "tailwind.config.ts",
-    "scripts/generate-og.mjs",
     "app/opengraph-image.png",
     "app/icon.svg",
     "README.md",
