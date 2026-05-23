@@ -16,12 +16,6 @@
       "hiddenInBookmarks": false
     },
     {
-      "path": "lib",
-      "type": "folder",
-      "hiddenInNav": true,
-      "hiddenInBookmarks": false
-    },
-    {
       "path": "public",
       "type": "folder",
       "hiddenInNav": true,
@@ -82,13 +76,31 @@
       "hiddenInBookmarks": false
     },
     {
-      "path": "tailwind.config.ts",
+      "path": "tsconfig.json",
       "type": "file",
       "hiddenInNav": true,
       "hiddenInBookmarks": false
     },
     {
-      "path": "tsconfig.json",
+      "path": "node_modules",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "out",
+      "type": "folder",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "next-env.d.ts",
+      "type": "file",
+      "hiddenInNav": true,
+      "hiddenInBookmarks": false
+    },
+    {
+      "path": "tsconfig.tsbuildinfo",
       "type": "file",
       "hiddenInNav": true,
       "hiddenInBookmarks": false
