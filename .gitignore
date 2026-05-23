@@ -43,3 +43,10 @@ coverage/
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Per-machine Obsidian state (cursor positions, pane layout)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Claude Code session data
+.claudian/
