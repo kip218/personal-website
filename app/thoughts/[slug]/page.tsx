@@ -29,15 +29,22 @@ export async function generateMetadata({
 async function loadPost(slug: string) {
   // Guard against path traversal — slug must be a simple filename component.
   if (!/^[a-z0-9][a-z0-9-_]*$/i.test(slug)) return null;
-  // Skip drafts — `getThought` already filters them out.
-  if (!(await getThought(slug))) return null;
-  const file = path.join(process.cwd(), "content", "thoughts", `${slug}.mdx`);
+  // Resolve the slug to a thought. This filters drafts and gives us the source
+  // filename, which may differ from the slug when prefixed with a date.
+  const thought = await getThought(slug);
+  if (!thought) return null;
+  const file = path.join(
+    process.cwd(),
+    "content",
+    "thoughts",
+    `${thought.file}.mdx`,
+  );
   try {
     await fs.access(file);
   } catch {
     return null;
   }
-  const mod = await import(`@/content/thoughts/${slug}.mdx`);
+  const mod = await import(`@/content/thoughts/${thought.file}.mdx`);
   return mod.default as React.ComponentType;
 }
 
