@@ -19,6 +19,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Full history so the guard below can restore metadata assets from
+          # an earlier commit if a vault-backup commit deleted them.
+          fetch-depth: 0
+
+      # The Obsidian vault-backup automation periodically commits the deletion
+      # of the file-convention metadata assets (app/icon.svg is the favicon,
+      # app/opengraph-image.png the social card). If either is missing at build
+      # time, restore it from the last commit that still had it so the deploy
+      # is never shipped without a favicon. The warning surfaces the recurrence
+      # so it can be fixed at the source.
+      - name: Restore metadata assets if a vault backup deleted them
+        run: |
+          for f in app/icon.svg app/opengraph-image.png; do
+            if [ ! -f "$f" ]; then
+              sha=$(git rev-list -n1 HEAD -- "$f")
+              echo "::warning file=$f::$f missing (deleted by a vault backup) — restoring from ${sha:0:7}"
+              git checkout "$sha" -- "$f" 2>/dev/null || git checkout "$sha^" -- "$f"
+            fi
+          done
 
       - uses: actions/setup-node@v4
         with:
