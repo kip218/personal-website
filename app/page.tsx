@@ -17,7 +17,8 @@ export default async function Home() {
         <h2 className="text-base font-medium tracking-tight">Today</h2>
         <ul className="list-none space-y-1 pl-0 text-base leading-relaxed text-[color:var(--muted)]">
           <li>I build data pipelines at Optimove. I also enjoy building internal tools for my team.</li>
-          <li>Recently I've been obsessed with context engineering and clean UI/UX.</li>
+          <li>Recently I've been playing around with context engineering and clean UI/UX.</li>
+          <li>I'm really enjoying Claude right now and excited about the future of LLMs and agentic workflows.</li>
           <li>I'm still learning 😊</li>
         </ul>
       </section>
