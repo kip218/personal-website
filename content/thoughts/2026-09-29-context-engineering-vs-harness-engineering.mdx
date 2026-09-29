@@ -18,6 +18,9 @@ The first version of this bot was a single Claude skill with a fixed prompt. It 
 
 So then I started building the context layer - our internal documentation on our team's review standards, domain knowledge, and conventions. Together with team leads and other senior engineers, we made a Notion knowledgebase built specifically for Claude. These pages were indexed and synced automatically to the repo whenever I merge to main on Github. The key point about this context layer is that each review agent only gets fed the Notion pages relevant for its specific review purpose. The SQL review agent gets our SQL standards and the ETL review agent gets our pipeline conventions. This keeps each review agent scoped tightly and reduces context bloat - I noticed that this reduced the rate of hallucination and increased consistency in the review results.
 
+So the context layer made the reviews better, but I still had a problem: how do I keep improving the bot without manually reviewing every single output in the PR channel? At first I started off reviewing the output manually and refining each agent prompt and the knowledgebase, but I quickly realized this was not scalable nor efficient. I was becoming the bottleneck for the bot's fee
+
+
 ---
 
 
