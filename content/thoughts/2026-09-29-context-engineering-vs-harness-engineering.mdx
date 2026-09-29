@@ -6,11 +6,11 @@ draft: true
 ---
 I kept hearing the terms "context engineering" and "harness engineering" thrown around. I didn't fully understand the distinction until I started building a PR review bot for my team. 
 
-Our existing PR review cycle had a couple bottlenecks as it relied on senior engineers being available to review tickets before they were approved. We'd have several PR reviews sitting in a queue in the dedicated PR review Slack channel until the senior engineer had time to review it. Based on this pain point, I decided to build a Slack bot that gives instant feedback once the ticket is posted in the PR review Slack channel.
+Our existing PR review cycle had a couple bottlenecks as it relied on senior engineers being available to review tickets before they were approved. We'd have several PR reviews sitting in a queue in the dedicated PR review Slack channel until the senior engineer had time to review it. Based on this pain point, I decided to build a Slack bot that gives instant feedback once the ticket is posted in the channel.
 
 With the PR review bot, the review cycle now looks like this:
 1. An engineer posts the ticket requiring PR approval in our Slack channel.
-2. The bot takes the ticket URL, pulling in the necessary context, the draft, the code changes, ETL configs, and everything else related to the PR. The bot runs a classifier agent that identifies what type of ticket it is and which review agents to dispatch.
+2. The bot takes the ticket URL, pulling in the necessary context: the draft, the code changes, ETL configs, and everything else related to the PR. The bot runs a classifier agent that identifies what type of ticket it is and which review agents to dispatch.
 3. Each review agent specializes in something specific: SQL logic, ETL patterns, QA validation, process compliance. They run independently in parallel, each agent tightly scoped to specifically keep it focused and minimize context bloat.
 4. Once each review agent finishes, a reconciler agent collects all the results, deduplicates issues and assigns severity to each of them - critical, warning, or note - and posts a final structured review in the Slack thread with a verdict on whether the PR is ready to approve or not.
 
